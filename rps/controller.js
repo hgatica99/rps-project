@@ -1,4 +1,4 @@
-var game = new Game();
+let game = new Game();
 
 
 // main entry point
@@ -27,7 +27,9 @@ function playGame() {
         console.log("playing round");
         playRound(i);
     }
-
+    console.log('Total Player Wins: ' + game.countOfPlayerWins)
+    console.log('Total Computer Wins: ' + game.countOfComputerWins)
+    console.log('Total Ties: ' + game.countOfTies)
     console.log("Run playGame() again to play more, thanks for playing!")
 
 }
