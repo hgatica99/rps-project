@@ -29,6 +29,7 @@ class Round{
     getComputerSelection() {
         //*********************************ADD CODE HERE *************************************/
         // Use Math.floor and select a random Selections enumerator from above 
+        return Object.values(Selections)[Math.floor(Math.random() * 3)]
     }
 
     /**
@@ -40,6 +41,15 @@ class Round{
     determineWinner() {
         //*********************************ADD CODE HERE *************************************/
         // Use this.playerSelection and this.computerSelection to return the appropriate outcome from the Outcomes enumerator above.
+        let pS = this.playerSelection
+        let cS = this.computerSelection
+        if (pS === cS){
+            return Outcomes["TIE"]
+        } else if (pS === 'rock' && cS === 'paper' || pS === 'paper' && cS === 'scissors' || pS === 'scissors' && cS === 'rock'){
+            return Outcomes["COMPUTER_WINS"]
+        } else {
+            return Outcomes["PLAYER_WINS"]
+        }
     }
 
 
